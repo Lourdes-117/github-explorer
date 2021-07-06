@@ -29,6 +29,14 @@ struct RepositoryModel: Decodable {
     let name: String?
     let owner: RepoOwnerModel?
     let repoDescription: String?
+    
+    var pulls: String {
+        String(format: StringConstants.shared.urls.pullsBaseUrl, owner?.login ?? "", name ?? "").addPercentEncoding()
+    }
+    
+    var issues: String {
+        String(format: StringConstants.shared.urls.issuesBaseUrl, owner?.login ?? "", name ?? "").addPercentEncoding()
+    }
 }
 
 struct RepoOwnerModel: Decodable {

@@ -56,4 +56,10 @@ class HomeViewModel {
     func getRepoAtIndex(_ index: Int) -> RepositoryModel? {
         savedRepositories?[index]
     }
+    
+    func deleteEntry(_ entryToDelete: RepositoryCoreData) {
+        PersistanceService.shared.context.delete(entryToDelete)
+        PersistanceService.shared.saveContext()
+        refreshData()
+    }
 }

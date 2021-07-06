@@ -4,14 +4,48 @@
 //
 //  Created by Lourdes on 7/6/21.
 //
+
+import Foundation
+import UIKit
+import CoreData
+
 protocol DatabaseUpdateHomeViewDelegate: AnyObject {
     func datebaseUpdated()
 }
 
-import Foundation
+enum RepoDescriptionViewType {
+    case addRepo
+    case viewRepo
+    
+    var buttonTitle: String {
+        switch self {
+        case .addRepo:
+            return "Add To Watchlist"
+        case .viewRepo:
+            return "Delete Repo"
+        }
+    }
+    
+    var buttonColor: UIColor {
+        switch self {
+        case .addRepo:
+            return .link
+        case .viewRepo:
+            return .systemRed
+        }
+    }
+}
+
 class RepoDescriptionViewModel {
+    var repoViewType: RepoDescriptionViewType = .addRepo
     var selectedRepo: RepositoryModel?
-    let addToWatchlistButtonTitle = "Add to Watchlist"
+    var managedObject: NSManagedObject?
+    var bottomButtonTitle: String {
+        repoViewType.buttonTitle
+    }
+    var bottomButtonColor: UIColor {
+        repoViewType.buttonColor
+    }
     
     var id: Int {
         selectedRepo?.id ?? 0
@@ -37,15 +71,21 @@ class RepoDescriptionViewModel {
         "RepoName: \(name ?? "")"
     }
     
-    func saveSelectedRepository() {
-        let newRepo = RepositoryCoreData(context: PersistanceService.shared.context)
-        newRepo.id = Int64(id)
-        newRepo.name = name
-        newRepo.repoDescription = descriptionText
-        newRepo.ownerName = selectedRepo?.owner?.login
-        newRepo.ownerId = Int64(selectedRepo?.owner?.id ?? 0)
-        newRepo.ownerAvatarUrl = selectedRepo?.owner?.avatarUrl
-        newRepo.updatedTime = Date()
+    func bottomBarAction() {
+        switch repoViewType {
+        case .addRepo:
+            let newRepo = RepositoryCoreData(context: PersistanceService.shared.context)
+            newRepo.id = Int64(id)
+            newRepo.name = name
+            newRepo.repoDescription = descriptionText
+            newRepo.ownerName = selectedRepo?.owner?.login
+            newRepo.ownerId = Int64(selectedRepo?.owner?.id ?? 0)
+            newRepo.ownerAvatarUrl = selectedRepo?.owner?.avatarUrl
+            newRepo.updatedTime = Date()
+        case .viewRepo:
+            guard let managedObject = managedObject else { return }
+            PersistanceService.shared.context.delete(managedObject)
+        }
         PersistanceService.shared.saveContext()
     }
     

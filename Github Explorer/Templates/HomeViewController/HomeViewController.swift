@@ -57,6 +57,15 @@ extension HomeViewController: UITableViewDataSource {
 
 // MARK: TableView Delegate
 extension HomeViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let repoDescriptionViewController = RepoDescriptionViewController()
+        repoDescriptionViewController.selectedRepo = viewModel.getRepoAtIndex(indexPath.row)
+        repoDescriptionViewController.managedObject = viewModel.getManagedObjectAtIndex(indexPath.row)
+        repoDescriptionViewController.repoDescriptionViewType = .viewRepo
+        repoDescriptionViewController.delegate = self
+        navigationController?.pushViewController(repoDescriptionViewController, animated: true)
+    }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         viewModel.cellHeight
     }
@@ -64,9 +73,7 @@ extension HomeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let action = UIContextualAction(style: .destructive, title: viewModel.deleteText) {[weak self] _,_,_ in
             guard let entryToDelete = self?.viewModel.getManagedObjectAtIndex(indexPath.row) else { return }
-            PersistanceService.shared.context.delete(entryToDelete)
-            PersistanceService.shared.saveContext()
-            self?.viewModel.refreshData()
+            self?.viewModel.deleteEntry(entryToDelete)
             self?.tableView.beginUpdates()
             self?.tableView.deleteRows(at: [indexPath], with: .automatic)
             self?.tableView.endUpdates()

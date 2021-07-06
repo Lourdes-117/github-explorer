@@ -15,4 +15,6 @@ struct StringConstants {
 
 struct ApiBaseUrls {
     let searchBaseUrl = "https://api.github.com/search/repositories?q="
+    let issuesBaseUrl = "https://api.github.com/repos/%@/%@/issues"
+    let pullsBaseUrl = "https://api.github.com/repos/%@/%@/pulls"
 }

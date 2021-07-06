@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 class RepoDescriptionViewController: UIViewController {
 // MARK: Properties
@@ -18,6 +19,8 @@ class RepoDescriptionViewController: UIViewController {
     var safeArea: UILayoutGuide!
     
     var selectedRepo: RepositoryModel?
+    var managedObject: NSManagedObject?
+    var repoDescriptionViewType: RepoDescriptionViewType = .addRepo
     
     let viewModel = RepoDescriptionViewModel()
     
@@ -30,6 +33,8 @@ class RepoDescriptionViewController: UIViewController {
     
     fileprivate func initialSetup() {
         viewModel.selectedRepo = selectedRepo
+        viewModel.repoViewType = repoDescriptionViewType
+        viewModel.managedObject = managedObject
         safeArea = view.layoutMarginsGuide
         view.backgroundColor = .systemBackground
         setupProfilePictureView()
@@ -92,8 +97,8 @@ class RepoDescriptionViewController: UIViewController {
         view.addSubview(addToWatchlistButton)
         addToWatchlistButton.addTarget(self, action: #selector(onTapAddToWatchlistButton), for: .touchDown)
         addToWatchlistButton.translatesAutoresizingMaskIntoConstraints = false
-        addToWatchlistButton.setTitle(viewModel.addToWatchlistButtonTitle, for: .normal)
-        addToWatchlistButton.setTitleColor(.link, for: .normal)
+        addToWatchlistButton.setTitle(viewModel.bottomButtonTitle, for: .normal)
+        addToWatchlistButton.setTitleColor(viewModel.bottomButtonColor, for: .normal)
         addToWatchlistButton.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor).isActive = true
         addToWatchlistButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: horizontalPadding).isActive = true
         addToWatchlistButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: horizontalPadding).isActive = true
@@ -101,8 +106,13 @@ class RepoDescriptionViewController: UIViewController {
     
 // MARK: Button Tap Actions
     @objc fileprivate func onTapAddToWatchlistButton() {
-        viewModel.saveSelectedRepository()
+        viewModel.bottomBarAction()
         delegate?.datebaseUpdated()
-        self.dismiss(animated: true, completion: nil)
+        switch viewModel.repoViewType {
+        case .addRepo:
+            self.dismiss(animated: true, completion: nil)
+        case .viewRepo:
+            navigationController?.popViewController(animated: true)
+        }
     }
 }
