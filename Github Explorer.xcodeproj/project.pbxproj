@@ -22,6 +22,10 @@
 		AE850CC22694299400A4CC04 /* StringConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE850CC12694299400A4CC04 /* StringConstants.swift */; };
 		AE850CC426942EF600A4CC04 /* StringUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE850CC326942EF600A4CC04 /* StringUtility.swift */; };
 		AE850CC6269435E700A4CC04 /* SearchRepoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE850CC5269435E700A4CC04 /* SearchRepoViewModel.swift */; };
+		AE850CCA2694385400A4CC04 /* RepoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE850CC92694385400A4CC04 /* RepoTableViewCell.xib */; };
+		AE850CCC2694386300A4CC04 /* RepoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE850CCB2694386300A4CC04 /* RepoTableViewCell.swift */; };
+		AE850CCE2694402B00A4CC04 /* UIViewUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE850CCD2694402B00A4CC04 /* UIViewUtility.swift */; };
+		AE850CD02694448100A4CC04 /* UIImageViewUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE850CCF2694448100A4CC04 /* UIImageViewUtility.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +46,10 @@
 		AE850CC12694299400A4CC04 /* StringConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringConstants.swift; sourceTree = "<group>"; };
 		AE850CC326942EF600A4CC04 /* StringUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringUtility.swift; sourceTree = "<group>"; };
 		AE850CC5269435E700A4CC04 /* SearchRepoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRepoViewModel.swift; sourceTree = "<group>"; };
+		AE850CC92694385400A4CC04 /* RepoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepoTableViewCell.xib; sourceTree = "<group>"; };
+		AE850CCB2694386300A4CC04 /* RepoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoTableViewCell.swift; sourceTree = "<group>"; };
+		AE850CCD2694402B00A4CC04 /* UIViewUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewUtility.swift; sourceTree = "<group>"; };
+		AE850CCF2694448100A4CC04 /* UIImageViewUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewUtility.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +84,7 @@
 			children = (
 				AE850CAF2694158300A4CC04 /* Lifecycle */,
 				AE850CB226941CB600A4CC04 /* Templates */,
+				AE850CC72694382100A4CC04 /* Organism */,
 				AE850CB12694159D00A4CC04 /* Resources */,
 				AE850CBE269423E400A4CC04 /* DataModel */,
 				AE850CA92694155F00A4CC04 /* Info.plist */,
@@ -138,6 +147,8 @@
 			children = (
 				AE850CB926941F4400A4CC04 /* UIViewControllerUtility.swift */,
 				AE850CC326942EF600A4CC04 /* StringUtility.swift */,
+				AE850CCD2694402B00A4CC04 /* UIViewUtility.swift */,
+				AE850CCF2694448100A4CC04 /* UIImageViewUtility.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -156,6 +167,23 @@
 				AE850CBF2694240300A4CC04 /* SearchDataModel.swift */,
 			);
 			path = DataModel;
+			sourceTree = "<group>";
+		};
+		AE850CC72694382100A4CC04 /* Organism */ = {
+			isa = PBXGroup;
+			children = (
+				AE850CC82694382D00A4CC04 /* RepoTableViewCell */,
+			);
+			path = Organism;
+			sourceTree = "<group>";
+		};
+		AE850CC82694382D00A4CC04 /* RepoTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				AE850CC92694385400A4CC04 /* RepoTableViewCell.xib */,
+				AE850CCB2694386300A4CC04 /* RepoTableViewCell.swift */,
+			);
+			path = RepoTableViewCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,6 +247,7 @@
 				AE850CB526941D3200A4CC04 /* SearchRepoViewController.storyboard in Resources */,
 				AE850CA52694155F00A4CC04 /* Assets.xcassets in Resources */,
 				AE850CA02694155C00A4CC04 /* HomeViewController.storyboard in Resources */,
+				AE850CCA2694385400A4CC04 /* RepoTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -232,6 +261,7 @@
 				AE850C9D2694155C00A4CC04 /* HomeViewController.swift in Sources */,
 				AE850CC02694240300A4CC04 /* SearchDataModel.swift in Sources */,
 				AE850CC22694299400A4CC04 /* StringConstants.swift in Sources */,
+				AE850CCE2694402B00A4CC04 /* UIViewUtility.swift in Sources */,
 				AE850CC426942EF600A4CC04 /* StringUtility.swift in Sources */,
 				AE850CB726941D4000A4CC04 /* SearchRepoViewController.swift in Sources */,
 				AE850C992694155C00A4CC04 /* AppDelegate.swift in Sources */,
@@ -239,7 +269,9 @@
 				AE850C9B2694155C00A4CC04 /* SceneDelegate.swift in Sources */,
 				AE850CC6269435E700A4CC04 /* SearchRepoViewModel.swift in Sources */,
 				AE850CA32694155C00A4CC04 /* Github_Explorer.xcdatamodeld in Sources */,
+				AE850CD02694448100A4CC04 /* UIImageViewUtility.swift in Sources */,
 				AE850CBA26941F4400A4CC04 /* UIViewControllerUtility.swift in Sources */,
+				AE850CCC2694386300A4CC04 /* RepoTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

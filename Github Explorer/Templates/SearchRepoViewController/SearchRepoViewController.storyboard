@@ -17,28 +17,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" searchBarStyle="minimal" prompt="Search" placeholder="Search For a Repository" translatesAutoresizingMaskIntoConstraints="NO" id="hli-he-Mh5">
-                                <rect key="frame" x="0.0" y="44" width="414" height="85"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="search" textContentType="name"/>
-                            </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xaI-go-gQ3">
                                 <rect key="frame" x="0.0" y="129" width="414" height="733"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" prompt="Search" placeholder="Search For a Repository" translatesAutoresizingMaskIntoConstraints="NO" id="hli-he-Mh5">
+                                <rect key="frame" x="0.0" y="44" width="414" height="85"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="search" textContentType="name"/>
+                            </searchBar>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="5uu-wq-FIr">
+                                <rect key="frame" x="188.5" y="477" width="37" height="37"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="hli-he-Mh5" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="7uM-Ow-DEv"/>
+                            <constraint firstItem="5uu-wq-FIr" firstAttribute="centerX" secondItem="xaI-go-gQ3" secondAttribute="centerX" id="Ihv-tm-bi8"/>
                             <constraint firstItem="hli-he-Mh5" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="KSb-ye-h9L"/>
                             <constraint firstItem="xaI-go-gQ3" firstAttribute="top" secondItem="hli-he-Mh5" secondAttribute="bottom" id="Kea-do-iDu"/>
                             <constraint firstItem="hli-he-Mh5" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="gCr-IV-RFF"/>
+                            <constraint firstItem="5uu-wq-FIr" firstAttribute="centerY" secondItem="xaI-go-gQ3" secondAttribute="centerY" id="kcO-xU-rpH"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="xaI-go-gQ3" secondAttribute="trailing" id="m25-ca-Cv0"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="xaI-go-gQ3" secondAttribute="bottom" id="vZB-49-knR"/>
                             <constraint firstItem="xaI-go-gQ3" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="wx1-O8-kL0"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="5uu-wq-FIr" id="1Cf-6Z-HGn"/>
                         <outlet property="searchBar" destination="hli-he-Mh5" id="cD7-Qm-pfq"/>
                         <outlet property="tableView" destination="xaI-go-gQ3" id="rQQ-h7-wvO"/>
                     </connections>
