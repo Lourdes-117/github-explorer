@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5Yr-EG-SMZ">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -9,6 +9,22 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="Vaa-Vm-jh8">
+            <objects>
+                <navigationController id="5Yr-EG-SMZ" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="azo-pM-Tu1">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="JAC-uU-RH7"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YHf-4j-fyl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-704" y="119"/>
+        </scene>
         <!--Home View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -16,9 +32,64 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lHC-4m-4n7">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="frl-Ub-MBZ">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Repositories Saved Yet." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aWV-2U-qnI">
+                                        <rect key="frame" x="104.5" y="377" width="205" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap On Add Button To Search For Repositories" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pbb-N4-kgf">
+                                        <rect key="frame" x="31" y="405" width="352" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Pbb-N4-kgf" secondAttribute="trailing" id="DS0-wQ-cPn"/>
+                                    <constraint firstItem="Pbb-N4-kgf" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="frl-Ub-MBZ" secondAttribute="leading" id="Q75-0d-vfK"/>
+                                    <constraint firstItem="Pbb-N4-kgf" firstAttribute="top" secondItem="aWV-2U-qnI" secondAttribute="bottom" constant="7.5" id="caY-wO-zWn"/>
+                                    <constraint firstItem="aWV-2U-qnI" firstAttribute="centerY" secondItem="frl-Ub-MBZ" secondAttribute="centerY" id="dK7-tt-kz8"/>
+                                    <constraint firstItem="aWV-2U-qnI" firstAttribute="centerX" secondItem="frl-Ub-MBZ" secondAttribute="centerX" id="e2Z-rV-k42"/>
+                                    <constraint firstItem="Pbb-N4-kgf" firstAttribute="centerX" secondItem="frl-Ub-MBZ" secondAttribute="centerX" id="eWK-ZK-PPG"/>
+                                    <constraint firstItem="aWV-2U-qnI" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="frl-Ub-MBZ" secondAttribute="leading" id="lZN-05-h2x"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="aWV-2U-qnI" secondAttribute="trailing" id="ysL-wy-ntT"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="frl-Ub-MBZ" firstAttribute="leading" secondItem="lHC-4m-4n7" secondAttribute="leading" id="2sf-ON-m7d"/>
+                            <constraint firstItem="frl-Ub-MBZ" firstAttribute="bottom" secondItem="lHC-4m-4n7" secondAttribute="bottom" id="3Rc-oz-vPp"/>
+                            <constraint firstItem="lHC-4m-4n7" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="YeA-Mk-oSx"/>
+                            <constraint firstItem="frl-Ub-MBZ" firstAttribute="trailing" secondItem="lHC-4m-4n7" secondAttribute="trailing" id="bXZ-d1-rFE"/>
+                            <constraint firstItem="lHC-4m-4n7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="jFG-1G-NDV"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="lHC-4m-4n7" secondAttribute="bottom" id="qMn-9S-n4A"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="lHC-4m-4n7" secondAttribute="trailing" id="rIA-eg-Lpm"/>
+                            <constraint firstItem="frl-Ub-MBZ" firstAttribute="top" secondItem="lHC-4m-4n7" secondAttribute="top" id="uE1-49-h8Z"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="D6u-ja-HqU">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="plus" catalog="system" id="ari-Ig-0e1">
+                            <connections>
+                                <action selector="onTapAddNewRepo:" destination="BYZ-38-t0r" id="CcC-W1-6P3"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="noResultsView" destination="frl-Ub-MBZ" id="hZn-3E-gIe"/>
+                        <outlet property="tableView" destination="lHC-4m-4n7" id="Kuv-65-ZcR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -26,6 +97,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="plus" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
