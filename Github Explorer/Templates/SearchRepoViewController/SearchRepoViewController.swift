@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  SearchRepoViewController.swift
 //  Github Explorer
 //
 //  Created by Lourdes on 7/6/21.
@@ -7,30 +7,25 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+class SearchRepoViewController: UIViewController {
 // MARK: Outlets
+    @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var noResultsView: UIView!
     
-// MARK: Lifecycle methods
+// MARK: Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         initialSetup()
     }
     
     private func initialSetup() {
-        noResultsView.isHidden = true
         tableView.dataSource = self
         tableView.delegate = self
-    }
-
-// MARK: Button Actions
-    @IBAction func onTapAddNewRepo(_ sender: Any) {
     }
 }
 
 // MARK: TableView DataSource
-extension HomeViewController: UITableViewDataSource {
+extension SearchRepoViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         0
     }
@@ -41,6 +36,6 @@ extension HomeViewController: UITableViewDataSource {
 }
 
 // MARK: TableView Delegate
-extension HomeViewController: UITableViewDelegate {
+extension SearchRepoViewController: UITableViewDelegate {
     
 }

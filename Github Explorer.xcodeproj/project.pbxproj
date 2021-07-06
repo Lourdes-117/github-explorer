@@ -14,6 +14,9 @@
 		AE850CA32694155C00A4CC04 /* Github_Explorer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AE850CA12694155C00A4CC04 /* Github_Explorer.xcdatamodeld */; };
 		AE850CA52694155F00A4CC04 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE850CA42694155F00A4CC04 /* Assets.xcassets */; };
 		AE850CA82694155F00A4CC04 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE850CA62694155F00A4CC04 /* LaunchScreen.storyboard */; };
+		AE850CB526941D3200A4CC04 /* SearchRepoViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE850CB426941D3200A4CC04 /* SearchRepoViewController.storyboard */; };
+		AE850CB726941D4000A4CC04 /* SearchRepoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE850CB626941D4000A4CC04 /* SearchRepoViewController.swift */; };
+		AE850CBA26941F4400A4CC04 /* UIViewControllerUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE850CB926941F4400A4CC04 /* UIViewControllerUtility.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,9 @@
 		AE850CA42694155F00A4CC04 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AE850CA72694155F00A4CC04 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AE850CA92694155F00A4CC04 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AE850CB426941D3200A4CC04 /* SearchRepoViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchRepoViewController.storyboard; sourceTree = "<group>"; };
+		AE850CB626941D4000A4CC04 /* SearchRepoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRepoViewController.swift; sourceTree = "<group>"; };
+		AE850CB926941F4400A4CC04 /* UIViewControllerUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerUtility.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,9 +64,9 @@
 		AE850C972694155C00A4CC04 /* Github Explorer */ = {
 			isa = PBXGroup;
 			children = (
-				AE850CB12694159D00A4CC04 /* Resources */,
-				AE850CB02694159100A4CC04 /* HomeViewController */,
 				AE850CAF2694158300A4CC04 /* Lifecycle */,
+				AE850CB226941CB600A4CC04 /* Templates */,
+				AE850CB12694159D00A4CC04 /* Resources */,
 				AE850CA92694155F00A4CC04 /* Info.plist */,
 				AE850CA12694155C00A4CC04 /* Github_Explorer.xcdatamodeld */,
 			);
@@ -88,10 +94,37 @@
 		AE850CB12694159D00A4CC04 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				AE850CB826941F1000A4CC04 /* Utilities */,
 				AE850CA42694155F00A4CC04 /* Assets.xcassets */,
 				AE850CA62694155F00A4CC04 /* LaunchScreen.storyboard */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		AE850CB226941CB600A4CC04 /* Templates */ = {
+			isa = PBXGroup;
+			children = (
+				AE850CB02694159100A4CC04 /* HomeViewController */,
+				AE850CB326941D1400A4CC04 /* SearchRepoViewController */,
+			);
+			path = Templates;
+			sourceTree = "<group>";
+		};
+		AE850CB326941D1400A4CC04 /* SearchRepoViewController */ = {
+			isa = PBXGroup;
+			children = (
+				AE850CB426941D3200A4CC04 /* SearchRepoViewController.storyboard */,
+				AE850CB626941D4000A4CC04 /* SearchRepoViewController.swift */,
+			);
+			path = SearchRepoViewController;
+			sourceTree = "<group>";
+		};
+		AE850CB826941F1000A4CC04 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				AE850CB926941F4400A4CC04 /* UIViewControllerUtility.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -152,6 +185,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE850CA82694155F00A4CC04 /* LaunchScreen.storyboard in Resources */,
+				AE850CB526941D3200A4CC04 /* SearchRepoViewController.storyboard in Resources */,
 				AE850CA52694155F00A4CC04 /* Assets.xcassets in Resources */,
 				AE850CA02694155C00A4CC04 /* HomeViewController.storyboard in Resources */,
 			);
@@ -165,9 +199,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE850C9D2694155C00A4CC04 /* HomeViewController.swift in Sources */,
+				AE850CB726941D4000A4CC04 /* SearchRepoViewController.swift in Sources */,
 				AE850C992694155C00A4CC04 /* AppDelegate.swift in Sources */,
 				AE850C9B2694155C00A4CC04 /* SceneDelegate.swift in Sources */,
 				AE850CA32694155C00A4CC04 /* Github_Explorer.xcdatamodeld in Sources */,
+				AE850CBA26941F4400A4CC04 /* UIViewControllerUtility.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
