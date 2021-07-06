@@ -12,6 +12,8 @@ class SearchRepoViewController: UIViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     
+    let viewModel = SearchRepoViewModel()
+    
 // MARK: Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +23,7 @@ class SearchRepoViewController: UIViewController {
     private func initialSetup() {
         tableView.dataSource = self
         tableView.delegate = self
+        searchBar.delegate = self
     }
 }
 
@@ -38,4 +41,16 @@ extension SearchRepoViewController: UITableViewDataSource {
 // MARK: TableView Delegate
 extension SearchRepoViewController: UITableViewDelegate {
     
+}
+
+// MARK: SearchBar Delegate
+extension SearchRepoViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        guard let searchKey = searchBar.text,
+              !searchKey.isEmpty else { return }
+        let searchQuery = StringConstants.shared.urls.searchBaseUrl.appending(searchKey).addPercentEncoding()
+        NetworkManager.getDataFromApi(fromUrl: searchQuery) { [weak self] (searchResults: SearchDataModel?) in
+            self?.viewModel.searchResults = searchResults
+        }
+    }
 }

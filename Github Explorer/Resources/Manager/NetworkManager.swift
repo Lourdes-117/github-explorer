@@ -20,8 +20,8 @@ class NetworkManager {
                     completion(nil)
                     return
                 }
-                let jsonArray = try JSONDecoder().decode(T.self, from: data)
-                completion(jsonArray);
+                let jsonData = try JSONDecoder().decode(T.self, from: data)
+                completion(jsonData);
                 
             } catch {
                 debugPrint("Error in Fetching Data: \(error)")
