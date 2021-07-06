@@ -6,6 +6,8 @@
 //
 
 import Foundation
+import CoreData
+
 struct SearchDataModel: Decodable {
     private enum CodingKeys: String, CodingKey {
         case totalCount = "total_count"
@@ -17,10 +19,16 @@ struct SearchDataModel: Decodable {
 }
 
 struct RepositoryModel: Decodable {
+    private enum CodingKeys: String, CodingKey {
+        case id
+        case name
+        case owner
+        case repoDescription = "description"
+    }
     let id: Int?
     let name: String?
     let owner: RepoOwnerModel?
-    let description: String?
+    let repoDescription: String?
 }
 
 struct RepoOwnerModel: Decodable {

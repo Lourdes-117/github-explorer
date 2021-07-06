@@ -28,6 +28,9 @@
 		AE850CD02694448100A4CC04 /* UIImageViewUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE850CCF2694448100A4CC04 /* UIImageViewUtility.swift */; };
 		AE850CD326944AA600A4CC04 /* RepoDescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE850CD226944AA600A4CC04 /* RepoDescriptionViewController.swift */; };
 		AE850CD52694515900A4CC04 /* RepoDescriptionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE850CD42694515900A4CC04 /* RepoDescriptionViewModel.swift */; };
+		AE850CDC2694605D00A4CC04 /* PersistanceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE850CDB2694605D00A4CC04 /* PersistanceService.swift */; };
+		AE850CFB26946FE400A4CC04 /* RepositoryCoreData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE850CF926946FE400A4CC04 /* RepositoryCoreData+CoreDataClass.swift */; };
+		AE850CFC26946FE400A4CC04 /* RepositoryCoreData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE850CFA26946FE400A4CC04 /* RepositoryCoreData+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +57,9 @@
 		AE850CCF2694448100A4CC04 /* UIImageViewUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewUtility.swift; sourceTree = "<group>"; };
 		AE850CD226944AA600A4CC04 /* RepoDescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoDescriptionViewController.swift; sourceTree = "<group>"; };
 		AE850CD42694515900A4CC04 /* RepoDescriptionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoDescriptionViewModel.swift; sourceTree = "<group>"; };
+		AE850CDB2694605D00A4CC04 /* PersistanceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistanceService.swift; sourceTree = "<group>"; };
+		AE850CF926946FE400A4CC04 /* RepositoryCoreData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RepositoryCoreData+CoreDataClass.swift"; sourceTree = "<group>"; };
+		AE850CFA26946FE400A4CC04 /* RepositoryCoreData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RepositoryCoreData+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,9 +96,9 @@
 				AE850CB226941CB600A4CC04 /* Templates */,
 				AE850CC72694382100A4CC04 /* Organism */,
 				AE850CB12694159D00A4CC04 /* Resources */,
-				AE850CBE269423E400A4CC04 /* DataModel */,
+				AE850CBE269423E400A4CC04 /* Model */,
+				AE850CDA26945C9800A4CC04 /* CoreData */,
 				AE850CA92694155F00A4CC04 /* Info.plist */,
-				AE850CA12694155C00A4CC04 /* Github_Explorer.xcdatamodeld */,
 			);
 			path = "Github Explorer";
 			sourceTree = "<group>";
@@ -102,6 +108,7 @@
 			children = (
 				AE850C982694155C00A4CC04 /* AppDelegate.swift */,
 				AE850C9A2694155C00A4CC04 /* SceneDelegate.swift */,
+				AE850CDB2694605D00A4CC04 /* PersistanceService.swift */,
 			);
 			path = Lifecycle;
 			sourceTree = "<group>";
@@ -130,9 +137,9 @@
 		AE850CB226941CB600A4CC04 /* Templates */ = {
 			isa = PBXGroup;
 			children = (
-				AE850CD126944A8000A4CC04 /* RepoDescriptionViewController */,
 				AE850CB02694159100A4CC04 /* HomeViewController */,
 				AE850CB326941D1400A4CC04 /* SearchRepoViewController */,
+				AE850CD126944A8000A4CC04 /* RepoDescriptionViewController */,
 			);
 			path = Templates;
 			sourceTree = "<group>";
@@ -166,12 +173,12 @@
 			path = Manager;
 			sourceTree = "<group>";
 		};
-		AE850CBE269423E400A4CC04 /* DataModel */ = {
+		AE850CBE269423E400A4CC04 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				AE850CBF2694240300A4CC04 /* SearchDataModel.swift */,
 			);
-			path = DataModel;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		AE850CC72694382100A4CC04 /* Organism */ = {
@@ -194,10 +201,20 @@
 		AE850CD126944A8000A4CC04 /* RepoDescriptionViewController */ = {
 			isa = PBXGroup;
 			children = (
-				AE850CD226944AA600A4CC04 /* RepoDescriptionViewController.swift */,
 				AE850CD42694515900A4CC04 /* RepoDescriptionViewModel.swift */,
+				AE850CD226944AA600A4CC04 /* RepoDescriptionViewController.swift */,
 			);
 			path = RepoDescriptionViewController;
+			sourceTree = "<group>";
+		};
+		AE850CDA26945C9800A4CC04 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				AE850CA12694155C00A4CC04 /* Github_Explorer.xcdatamodeld */,
+				AE850CF926946FE400A4CC04 /* RepositoryCoreData+CoreDataClass.swift */,
+				AE850CFA26946FE400A4CC04 /* RepositoryCoreData+CoreDataProperties.swift */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -281,8 +298,11 @@
 				AE850CB726941D4000A4CC04 /* SearchRepoViewController.swift in Sources */,
 				AE850C992694155C00A4CC04 /* AppDelegate.swift in Sources */,
 				AE850CBD269422DB00A4CC04 /* NetworkManager.swift in Sources */,
+				AE850CDC2694605D00A4CC04 /* PersistanceService.swift in Sources */,
 				AE850C9B2694155C00A4CC04 /* SceneDelegate.swift in Sources */,
 				AE850CC6269435E700A4CC04 /* SearchRepoViewModel.swift in Sources */,
+				AE850CFC26946FE400A4CC04 /* RepositoryCoreData+CoreDataProperties.swift in Sources */,
+				AE850CFB26946FE400A4CC04 /* RepositoryCoreData+CoreDataClass.swift in Sources */,
 				AE850CA32694155C00A4CC04 /* Github_Explorer.xcdatamodeld in Sources */,
 				AE850CD02694448100A4CC04 /* UIImageViewUtility.swift in Sources */,
 				AE850CBA26941F4400A4CC04 /* UIViewControllerUtility.swift in Sources */,

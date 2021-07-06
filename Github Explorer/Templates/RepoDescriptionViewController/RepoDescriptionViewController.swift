@@ -99,6 +99,7 @@ class RepoDescriptionViewController: UIViewController {
     
 // MARK: Button Tap Actions
     @objc fileprivate func onTapAddToWatchlistButton() {
-        
+        viewModel.saveSelectedRepository()
+        self.dismiss(animated: true, completion: nil)
     }
 }
