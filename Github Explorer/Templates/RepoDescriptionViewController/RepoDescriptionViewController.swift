@@ -21,6 +21,8 @@ class RepoDescriptionViewController: UIViewController {
     
     let viewModel = RepoDescriptionViewModel()
     
+    weak var delegate: DatabaseUpdateHomeViewDelegate?
+    
 // MARK: Lifecycle Methods
     override func viewDidLoad() {
         initialSetup()
@@ -100,6 +102,7 @@ class RepoDescriptionViewController: UIViewController {
 // MARK: Button Tap Actions
     @objc fileprivate func onTapAddToWatchlistButton() {
         viewModel.saveSelectedRepository()
+        delegate?.datebaseUpdated()
         self.dismiss(animated: true, completion: nil)
     }
 }

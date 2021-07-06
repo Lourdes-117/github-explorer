@@ -4,6 +4,9 @@
 //
 //  Created by Lourdes on 7/6/21.
 //
+protocol DatabaseUpdateHomeViewDelegate: AnyObject {
+    func datebaseUpdated()
+}
 
 import Foundation
 class RepoDescriptionViewModel {

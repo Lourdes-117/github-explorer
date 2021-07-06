@@ -31,6 +31,7 @@
 		AE850CDC2694605D00A4CC04 /* PersistanceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE850CDB2694605D00A4CC04 /* PersistanceService.swift */; };
 		AE850CFB26946FE400A4CC04 /* RepositoryCoreData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE850CF926946FE400A4CC04 /* RepositoryCoreData+CoreDataClass.swift */; };
 		AE850CFC26946FE400A4CC04 /* RepositoryCoreData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE850CFA26946FE400A4CC04 /* RepositoryCoreData+CoreDataProperties.swift */; };
+		AE850CFE269471F200A4CC04 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE850CFD269471F200A4CC04 /* HomeViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		AE850CDB2694605D00A4CC04 /* PersistanceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistanceService.swift; sourceTree = "<group>"; };
 		AE850CF926946FE400A4CC04 /* RepositoryCoreData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RepositoryCoreData+CoreDataClass.swift"; sourceTree = "<group>"; };
 		AE850CFA26946FE400A4CC04 /* RepositoryCoreData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RepositoryCoreData+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		AE850CFD269471F200A4CC04 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,8 +118,9 @@
 		AE850CB02694159100A4CC04 /* HomeViewController */ = {
 			isa = PBXGroup;
 			children = (
-				AE850C9C2694155C00A4CC04 /* HomeViewController.swift */,
 				AE850C9E2694155C00A4CC04 /* HomeViewController.storyboard */,
+				AE850CFD269471F200A4CC04 /* HomeViewModel.swift */,
+				AE850C9C2694155C00A4CC04 /* HomeViewController.swift */,
 			);
 			path = HomeViewController;
 			sourceTree = "<group>";
@@ -292,6 +295,7 @@
 				AE850CD326944AA600A4CC04 /* RepoDescriptionViewController.swift in Sources */,
 				AE850C9D2694155C00A4CC04 /* HomeViewController.swift in Sources */,
 				AE850CC02694240300A4CC04 /* SearchDataModel.swift in Sources */,
+				AE850CFE269471F200A4CC04 /* HomeViewModel.swift in Sources */,
 				AE850CC22694299400A4CC04 /* StringConstants.swift in Sources */,
 				AE850CCE2694402B00A4CC04 /* UIViewUtility.swift in Sources */,
 				AE850CC426942EF600A4CC04 /* StringUtility.swift in Sources */,

@@ -15,6 +15,8 @@ class SearchRepoViewController: UIViewController {
     
     let viewModel = SearchRepoViewModel()
     
+    weak var delegate: DatabaseUpdateHomeViewDelegate?
+    
 // MARK: Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,9 +59,10 @@ extension SearchRepoViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let viewController = RepoDescriptionViewController()
-        viewController.selectedRepo = viewModel.getRepoAtIndex(indexPath.row)
-        self.navigationController?.pushViewController(viewController, animated: true)
+        let repoDescriptionViewController = RepoDescriptionViewController()
+        repoDescriptionViewController.selectedRepo = viewModel.getRepoAtIndex(indexPath.row)
+        repoDescriptionViewController.delegate = delegate
+        self.navigationController?.pushViewController(repoDescriptionViewController, animated: true)
     }
 }
 
