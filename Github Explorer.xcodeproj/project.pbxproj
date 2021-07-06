@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		AE850C992694155C00A4CC04 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE850C982694155C00A4CC04 /* AppDelegate.swift */; };
 		AE850C9B2694155C00A4CC04 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE850C9A2694155C00A4CC04 /* SceneDelegate.swift */; };
-		AE850C9D2694155C00A4CC04 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE850C9C2694155C00A4CC04 /* ViewController.swift */; };
-		AE850CA02694155C00A4CC04 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE850C9E2694155C00A4CC04 /* Main.storyboard */; };
+		AE850C9D2694155C00A4CC04 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE850C9C2694155C00A4CC04 /* HomeViewController.swift */; };
+		AE850CA02694155C00A4CC04 /* HomeViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE850C9E2694155C00A4CC04 /* HomeViewController.storyboard */; };
 		AE850CA32694155C00A4CC04 /* Github_Explorer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AE850CA12694155C00A4CC04 /* Github_Explorer.xcdatamodeld */; };
 		AE850CA52694155F00A4CC04 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE850CA42694155F00A4CC04 /* Assets.xcassets */; };
 		AE850CA82694155F00A4CC04 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE850CA62694155F00A4CC04 /* LaunchScreen.storyboard */; };
@@ -20,8 +20,8 @@
 		AE850C952694155C00A4CC04 /* Github Explorer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Github Explorer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE850C982694155C00A4CC04 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AE850C9A2694155C00A4CC04 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		AE850C9C2694155C00A4CC04 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		AE850C9F2694155C00A4CC04 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		AE850C9C2694155C00A4CC04 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		AE850C9F2694155C00A4CC04 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/HomeViewController.storyboard; sourceTree = "<group>"; };
 		AE850CA22694155C00A4CC04 /* Github_Explorer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Github_Explorer.xcdatamodel; sourceTree = "<group>"; };
 		AE850CA42694155F00A4CC04 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AE850CA72694155F00A4CC04 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -58,16 +58,40 @@
 		AE850C972694155C00A4CC04 /* Github Explorer */ = {
 			isa = PBXGroup;
 			children = (
-				AE850C982694155C00A4CC04 /* AppDelegate.swift */,
-				AE850C9A2694155C00A4CC04 /* SceneDelegate.swift */,
-				AE850C9C2694155C00A4CC04 /* ViewController.swift */,
-				AE850C9E2694155C00A4CC04 /* Main.storyboard */,
-				AE850CA42694155F00A4CC04 /* Assets.xcassets */,
-				AE850CA62694155F00A4CC04 /* LaunchScreen.storyboard */,
+				AE850CB12694159D00A4CC04 /* Resources */,
+				AE850CB02694159100A4CC04 /* HomeViewController */,
+				AE850CAF2694158300A4CC04 /* Lifecycle */,
 				AE850CA92694155F00A4CC04 /* Info.plist */,
 				AE850CA12694155C00A4CC04 /* Github_Explorer.xcdatamodeld */,
 			);
 			path = "Github Explorer";
+			sourceTree = "<group>";
+		};
+		AE850CAF2694158300A4CC04 /* Lifecycle */ = {
+			isa = PBXGroup;
+			children = (
+				AE850C982694155C00A4CC04 /* AppDelegate.swift */,
+				AE850C9A2694155C00A4CC04 /* SceneDelegate.swift */,
+			);
+			path = Lifecycle;
+			sourceTree = "<group>";
+		};
+		AE850CB02694159100A4CC04 /* HomeViewController */ = {
+			isa = PBXGroup;
+			children = (
+				AE850C9C2694155C00A4CC04 /* HomeViewController.swift */,
+				AE850C9E2694155C00A4CC04 /* HomeViewController.storyboard */,
+			);
+			path = HomeViewController;
+			sourceTree = "<group>";
+		};
+		AE850CB12694159D00A4CC04 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				AE850CA42694155F00A4CC04 /* Assets.xcassets */,
+				AE850CA62694155F00A4CC04 /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -129,7 +153,7 @@
 			files = (
 				AE850CA82694155F00A4CC04 /* LaunchScreen.storyboard in Resources */,
 				AE850CA52694155F00A4CC04 /* Assets.xcassets in Resources */,
-				AE850CA02694155C00A4CC04 /* Main.storyboard in Resources */,
+				AE850CA02694155C00A4CC04 /* HomeViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,7 +164,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AE850C9D2694155C00A4CC04 /* ViewController.swift in Sources */,
+				AE850C9D2694155C00A4CC04 /* HomeViewController.swift in Sources */,
 				AE850C992694155C00A4CC04 /* AppDelegate.swift in Sources */,
 				AE850C9B2694155C00A4CC04 /* SceneDelegate.swift in Sources */,
 				AE850CA32694155C00A4CC04 /* Github_Explorer.xcdatamodeld in Sources */,
@@ -150,12 +174,12 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		AE850C9E2694155C00A4CC04 /* Main.storyboard */ = {
+		AE850C9E2694155C00A4CC04 /* HomeViewController.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				AE850C9F2694155C00A4CC04 /* Base */,
 			);
-			name = Main.storyboard;
+			name = HomeViewController.storyboard;
 			sourceTree = "<group>";
 		};
 		AE850CA62694155F00A4CC04 /* LaunchScreen.storyboard */ = {
@@ -291,13 +315,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = D2P9XDG372;
+				DEVELOPMENT_TEAM = 8C4BXC8Z6S;
 				INFOPLIST_FILE = "Github Explorer/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.lourdes.figfolders.Github-Explorer";
+				PRODUCT_BUNDLE_IDENTIFIER = com.lourdes.figfolders.githubexplorer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -310,13 +335,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = D2P9XDG372;
+				DEVELOPMENT_TEAM = 8C4BXC8Z6S;
 				INFOPLIST_FILE = "Github Explorer/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.lourdes.figfolders.Github-Explorer";
+				PRODUCT_BUNDLE_IDENTIFIER = com.lourdes.figfolders.githubexplorer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
