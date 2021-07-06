@@ -17,6 +17,8 @@
 		AE850CB526941D3200A4CC04 /* SearchRepoViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE850CB426941D3200A4CC04 /* SearchRepoViewController.storyboard */; };
 		AE850CB726941D4000A4CC04 /* SearchRepoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE850CB626941D4000A4CC04 /* SearchRepoViewController.swift */; };
 		AE850CBA26941F4400A4CC04 /* UIViewControllerUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE850CB926941F4400A4CC04 /* UIViewControllerUtility.swift */; };
+		AE850CBD269422DB00A4CC04 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE850CBC269422DB00A4CC04 /* NetworkManager.swift */; };
+		AE850CC02694240300A4CC04 /* SearchDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE850CBF2694240300A4CC04 /* SearchDataModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		AE850CB426941D3200A4CC04 /* SearchRepoViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchRepoViewController.storyboard; sourceTree = "<group>"; };
 		AE850CB626941D4000A4CC04 /* SearchRepoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRepoViewController.swift; sourceTree = "<group>"; };
 		AE850CB926941F4400A4CC04 /* UIViewControllerUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerUtility.swift; sourceTree = "<group>"; };
+		AE850CBC269422DB00A4CC04 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		AE850CBF2694240300A4CC04 /* SearchDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDataModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +71,7 @@
 				AE850CAF2694158300A4CC04 /* Lifecycle */,
 				AE850CB226941CB600A4CC04 /* Templates */,
 				AE850CB12694159D00A4CC04 /* Resources */,
+				AE850CBE269423E400A4CC04 /* DataModel */,
 				AE850CA92694155F00A4CC04 /* Info.plist */,
 				AE850CA12694155C00A4CC04 /* Github_Explorer.xcdatamodeld */,
 			);
@@ -94,6 +99,7 @@
 		AE850CB12694159D00A4CC04 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				AE850CBB269422C700A4CC04 /* Manager */,
 				AE850CB826941F1000A4CC04 /* Utilities */,
 				AE850CA42694155F00A4CC04 /* Assets.xcassets */,
 				AE850CA62694155F00A4CC04 /* LaunchScreen.storyboard */,
@@ -125,6 +131,22 @@
 				AE850CB926941F4400A4CC04 /* UIViewControllerUtility.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		AE850CBB269422C700A4CC04 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				AE850CBC269422DB00A4CC04 /* NetworkManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		AE850CBE269423E400A4CC04 /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				AE850CBF2694240300A4CC04 /* SearchDataModel.swift */,
+			);
+			path = DataModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,8 +221,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE850C9D2694155C00A4CC04 /* HomeViewController.swift in Sources */,
+				AE850CC02694240300A4CC04 /* SearchDataModel.swift in Sources */,
 				AE850CB726941D4000A4CC04 /* SearchRepoViewController.swift in Sources */,
 				AE850C992694155C00A4CC04 /* AppDelegate.swift in Sources */,
+				AE850CBD269422DB00A4CC04 /* NetworkManager.swift in Sources */,
 				AE850C9B2694155C00A4CC04 /* SceneDelegate.swift in Sources */,
 				AE850CA32694155C00A4CC04 /* Github_Explorer.xcdatamodeld in Sources */,
 				AE850CBA26941F4400A4CC04 /* UIViewControllerUtility.swift in Sources */,
