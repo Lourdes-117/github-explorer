@@ -60,12 +60,28 @@ extension HomeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         viewModel.cellHeight
     }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let action = UIContextualAction(style: .destructive, title: viewModel.deleteText) {[weak self] _,_,_ in
+            guard let entryToDelete = self?.viewModel.getManagedObjectAtIndex(indexPath.row) else { return }
+            PersistanceService.shared.context.delete(entryToDelete)
+            PersistanceService.shared.saveContext()
+            self?.viewModel.refreshData()
+            self?.tableView.beginUpdates()
+            self?.tableView.deleteRows(at: [indexPath], with: .automatic)
+            self?.tableView.endUpdates()
+            self?.noResultsView.isHidden = self?.viewModel.noResultsViewIsHidden ?? true
+        }
+        
+        return UISwipeActionsConfiguration(actions: [action])
+    }
 }
 
 // MARK: Database Updated Home View Delegate
 extension HomeViewController: DatabaseUpdateHomeViewDelegate {
     func datebaseUpdated() {
         viewModel.refreshData()
+        noResultsView.isHidden = viewModel.noResultsViewIsHidden
         tableView.reloadData()
     }
 }

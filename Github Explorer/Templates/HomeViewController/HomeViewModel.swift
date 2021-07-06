@@ -10,25 +10,35 @@ import UIKit
 class HomeViewModel {
     var savedRepositories: [RepositoryModel]?
     let cellHeight: CGFloat = 70
+    let deleteText = "Delete"
     func refreshData() {
         var repoModel = [RepositoryModel]()
-        do {
-            guard let savedRepo = try PersistanceService.shared.context.fetch(RepositoryCoreData.fetchRequest()) as? [RepositoryCoreData] else { return }
-            for eachRepo in savedRepo {
-                let owner = RepoOwnerModel(login: eachRepo.ownerName,
-                                           avatarUrl: eachRepo.ownerAvatarUrl,
-                                           id: Int(eachRepo.ownerId))
-                let repo = RepositoryModel(id: Int(eachRepo.id),
-                                           name: eachRepo.name,
-                                           owner: owner,
-                                           repoDescription: eachRepo.repoDescription)
-                repoModel.append(repo)
-            }
-        } catch {
-            debugPrint("Error Getting Saved Data \(error)")
-            return
+        guard let savedRepo = getManagedObject() else { return }
+        for eachRepo in savedRepo {
+            let owner = RepoOwnerModel(login: eachRepo.ownerName,
+                                       avatarUrl: eachRepo.ownerAvatarUrl,
+                                       id: Int(eachRepo.ownerId))
+            let repo = RepositoryModel(id: Int(eachRepo.id),
+                                       name: eachRepo.name,
+                                       owner: owner,
+                                       repoDescription: eachRepo.repoDescription)
+            repoModel.append(repo)
         }
         savedRepositories = repoModel
+    }
+    
+    func getManagedObject()-> [RepositoryCoreData]? {
+        do {
+            guard let savedRepo = try PersistanceService.shared.context.fetch(RepositoryCoreData.fetchRequest()) as? [RepositoryCoreData] else { return nil }
+            return savedRepo
+        } catch {
+            debugPrint("Error Getting Saved Data \(error)")
+            return nil
+        }
+    }
+    
+    func getManagedObjectAtIndex(_ index: Int)-> RepositoryCoreData? {
+        return getManagedObject()?[index]
     }
     
     var numberOfRows: Int {
