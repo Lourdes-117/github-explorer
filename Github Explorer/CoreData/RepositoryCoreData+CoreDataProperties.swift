@@ -22,6 +22,7 @@ extension RepositoryCoreData {
     @NSManaged public var ownerName: String?
     @NSManaged public var ownerAvatarUrl: String?
     @NSManaged public var ownerId: Int64
+    @NSManaged public var updatedTime: Date?
 
 }
 

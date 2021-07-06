@@ -45,6 +45,7 @@ class RepoDescriptionViewModel {
         newRepo.ownerName = selectedRepo?.owner?.login
         newRepo.ownerId = Int64(selectedRepo?.owner?.id ?? 0)
         newRepo.ownerAvatarUrl = selectedRepo?.owner?.avatarUrl
+        newRepo.updatedTime = Date()
         PersistanceService.shared.saveContext()
     }
     

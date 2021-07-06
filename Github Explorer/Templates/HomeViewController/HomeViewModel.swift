@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 class HomeViewModel {
     var savedRepositories: [RepositoryModel]?
@@ -29,7 +30,10 @@ class HomeViewModel {
     
     func getManagedObject()-> [RepositoryCoreData]? {
         do {
-            guard let savedRepo = try PersistanceService.shared.context.fetch(RepositoryCoreData.fetchRequest()) as? [RepositoryCoreData] else { return nil }
+            let fetchRequest: NSFetchRequest<RepositoryCoreData> = RepositoryCoreData.fetchRequest()
+            let sortByTime = NSSortDescriptor(key: "updatedTime", ascending: false)
+            fetchRequest.sortDescriptors = [sortByTime]
+            let savedRepo = try PersistanceService.shared.context.fetch(fetchRequest) 
             return savedRepo
         } catch {
             debugPrint("Error Getting Saved Data \(error)")
