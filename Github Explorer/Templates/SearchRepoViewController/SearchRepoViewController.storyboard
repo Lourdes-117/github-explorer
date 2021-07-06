@@ -33,10 +33,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xaI-go-gQ3">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xaI-go-gQ3">
                                 <rect key="frame" x="0.0" y="139" width="414" height="723"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ARL-S2-75e">
+                                <rect key="frame" x="0.0" y="139" width="414" height="723"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Results Found" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Xb-9O-y5x">
+                                        <rect key="frame" x="140" y="351" width="134" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please Try a Different Search Term" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hUM-ZI-ith">
+                                        <rect key="frame" x="75.5" y="380" width="263" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="6Xb-9O-y5x" firstAttribute="centerY" secondItem="ARL-S2-75e" secondAttribute="centerY" id="TAI-bs-Dlb"/>
+                                    <constraint firstItem="6Xb-9O-y5x" firstAttribute="centerX" secondItem="ARL-S2-75e" secondAttribute="centerX" id="ePu-aF-jfj"/>
+                                    <constraint firstItem="hUM-ZI-ith" firstAttribute="centerX" secondItem="ARL-S2-75e" secondAttribute="centerX" id="mB5-0c-Pyc"/>
+                                    <constraint firstItem="hUM-ZI-ith" firstAttribute="top" secondItem="6Xb-9O-y5x" secondAttribute="bottom" constant="8" id="ugV-6E-HVF"/>
+                                </constraints>
+                            </view>
                             <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search For a Repository" translatesAutoresizingMaskIntoConstraints="NO" id="hli-he-Mh5">
                                 <rect key="frame" x="0.0" y="88" width="414" height="51"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="search" textContentType="name"/>
@@ -48,10 +72,14 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="ARL-S2-75e" firstAttribute="top" secondItem="xaI-go-gQ3" secondAttribute="top" id="1sR-lp-PMI"/>
+                            <constraint firstItem="ARL-S2-75e" firstAttribute="bottom" secondItem="xaI-go-gQ3" secondAttribute="bottom" id="3nV-rb-qNb"/>
                             <constraint firstItem="hli-he-Mh5" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="7uM-Ow-DEv"/>
+                            <constraint firstItem="ARL-S2-75e" firstAttribute="leading" secondItem="xaI-go-gQ3" secondAttribute="leading" id="7vR-eQ-eL2"/>
                             <constraint firstItem="5uu-wq-FIr" firstAttribute="centerX" secondItem="xaI-go-gQ3" secondAttribute="centerX" id="Ihv-tm-bi8"/>
                             <constraint firstItem="hli-he-Mh5" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="KSb-ye-h9L"/>
                             <constraint firstItem="xaI-go-gQ3" firstAttribute="top" secondItem="hli-he-Mh5" secondAttribute="bottom" id="Kea-do-iDu"/>
+                            <constraint firstItem="ARL-S2-75e" firstAttribute="trailing" secondItem="xaI-go-gQ3" secondAttribute="trailing" id="LYb-EH-wmn"/>
                             <constraint firstItem="hli-he-Mh5" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="gCr-IV-RFF"/>
                             <constraint firstItem="5uu-wq-FIr" firstAttribute="centerY" secondItem="xaI-go-gQ3" secondAttribute="centerY" id="kcO-xU-rpH"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="xaI-go-gQ3" secondAttribute="trailing" id="m25-ca-Cv0"/>
@@ -62,13 +90,14 @@
                     <navigationItem key="navigationItem" id="IVg-0j-KJ2"/>
                     <connections>
                         <outlet property="activityIndicator" destination="5uu-wq-FIr" id="1Cf-6Z-HGn"/>
+                        <outlet property="noResultsView" destination="ARL-S2-75e" id="kAI-P0-mt5"/>
                         <outlet property="searchBar" destination="hli-he-Mh5" id="cD7-Qm-pfq"/>
                         <outlet property="tableView" destination="xaI-go-gQ3" id="rQQ-h7-wvO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="139" y="119"/>
+            <point key="canvasLocation" x="137.68115942028987" y="118.52678571428571"/>
         </scene>
     </scenes>
     <resources>

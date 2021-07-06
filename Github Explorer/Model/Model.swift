@@ -54,14 +54,14 @@ struct PullsOrIssuesModel: Decodable {
     private enum CodingKeys: String, CodingKey {
         case id
         case number
-        case url
+        case htmlUrl = "html_url"
         case status = "state"
         case title
         case user
     }
     let id: Int?
     let number: Int?
-    let url: String?
+    let htmlUrl: String?
     let status: String?
     let title: String?
     let user: RepoOwnerModel?

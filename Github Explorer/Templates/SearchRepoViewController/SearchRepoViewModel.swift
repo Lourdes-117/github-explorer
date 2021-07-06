@@ -19,4 +19,8 @@ class SearchRepoViewModel {
     func getRepoAtIndex(_ index: Int) -> RepositoryModel? {
         searchResults?.items?[index]
     }
+    
+    var shouldHideNoResultsView: Bool {
+        numberOfRows > 0
+    }
 }

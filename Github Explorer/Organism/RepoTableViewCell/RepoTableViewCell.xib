@@ -10,7 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RepoTableViewCell" rowHeight="70" id="7jC-ZX-LoD" customClass="RepoTableViewCell" customModule="Github_Explorer">
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RepoTableViewCell" id="7jC-ZX-LoD" customClass="RepoTableViewCell" customModule="Github_Explorer">
             <rect key="frame" x="0.0" y="0.0" width="366" height="70"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7jC-ZX-LoD" id="Id1-T9-b3L">
@@ -59,9 +59,11 @@
                             <constraint firstItem="BYR-zt-Vd6" firstAttribute="leading" secondItem="la9-z5-p5d" secondAttribute="trailing" constant="8" id="SwB-SW-keH"/>
                             <constraint firstItem="WBg-Jg-Pbi" firstAttribute="top" secondItem="BYR-zt-Vd6" secondAttribute="bottom" constant="12" id="acI-aq-tA8"/>
                             <constraint firstItem="bve-dA-ODi" firstAttribute="leading" secondItem="BYR-zt-Vd6" secondAttribute="trailing" constant="8" id="bP9-gT-sIt"/>
+                            <constraint firstAttribute="bottom" secondItem="la9-z5-p5d" secondAttribute="bottom" constant="8" id="cWh-Z3-X9L"/>
                             <constraint firstItem="la9-z5-p5d" firstAttribute="leading" secondItem="7Wz-eT-b7Q" secondAttribute="leading" constant="8" id="cj7-Jc-8Ic"/>
                             <constraint firstItem="BYR-zt-Vd6" firstAttribute="leading" secondItem="WBg-Jg-Pbi" secondAttribute="leading" id="dbb-MD-9Gd"/>
                             <constraint firstItem="bve-dA-ODi" firstAttribute="bottom" secondItem="BYR-zt-Vd6" secondAttribute="bottom" id="hrK-4b-2Iq"/>
+                            <constraint firstItem="la9-z5-p5d" firstAttribute="top" secondItem="7Wz-eT-b7Q" secondAttribute="top" constant="8" id="jSy-mA-Ztc"/>
                             <constraint firstItem="liE-PF-fhQ" firstAttribute="top" secondItem="WBg-Jg-Pbi" secondAttribute="top" id="sg5-aQ-5uA"/>
                             <constraint firstItem="BYR-zt-Vd6" firstAttribute="top" secondItem="la9-z5-p5d" secondAttribute="top" id="xW2-HA-Frd"/>
                         </constraints>

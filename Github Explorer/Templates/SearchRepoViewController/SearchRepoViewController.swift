@@ -11,6 +11,7 @@ class SearchRepoViewController: UIViewController {
 // MARK: Outlets
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var noResultsView: UIView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     let viewModel = SearchRepoViewModel()
@@ -24,6 +25,7 @@ class SearchRepoViewController: UIViewController {
     }
     
     private func initialSetup() {
+        noResultsView.isHidden = true
         registerCells()
         self.title = viewModel.pageTitle
         activityIndicator.isHidden = true
@@ -55,7 +57,7 @@ extension SearchRepoViewController: UITableViewDataSource {
 // MARK: TableView Delegate
 extension SearchRepoViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        viewModel.searchCellHeight
+        UITableView.automaticDimension
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -63,6 +65,10 @@ extension SearchRepoViewController: UITableViewDelegate {
         repoDescriptionViewController.selectedRepo = viewModel.getRepoAtIndex(indexPath.row)
         repoDescriptionViewController.delegate = delegate
         self.navigationController?.pushViewController(repoDescriptionViewController, animated: true)
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        noResultsView.isHidden = true
     }
 }
 
@@ -79,6 +85,7 @@ extension SearchRepoViewController: UISearchBarDelegate {
         NetworkManager.getDataFromApi(fromUrl: searchQuery) { [weak self] (searchResults: SearchDataModel?) in
             self?.viewModel.searchResults = searchResults
             DispatchQueue.main.async {
+                self?.noResultsView.isHidden = self?.viewModel.shouldHideNoResultsView ?? false
                 searchBar.searchTextField.isEnabled = true
                 self?.activityIndicator.isHidden = true
                 self?.activityIndicator.stopAnimating()

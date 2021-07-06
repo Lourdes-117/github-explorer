@@ -67,4 +67,10 @@ extension ShowIssuesOrPullRequestsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         UITableView.automaticDimension
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let url = viewModel.getUrlAtIndexpath(indexPath.row) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
+    }
 }

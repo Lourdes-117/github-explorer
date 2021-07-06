@@ -55,10 +55,15 @@ class ShowIssuesOrPullRequestsViewModel {
     }
     
     var numberOfRows: Int {
-        (pullOrIssues?.count ?? 0) > 5 ? 5 : (pullOrIssues?.count ?? 0)
+        (pullOrIssues?.count ?? 0)
     }
     
     func getIssueOrPullAtIndex(_ index: Int) -> PullsOrIssuesModel? {
         return pullOrIssues?[index]
+    }
+    
+    func getUrlAtIndexpath(_ index: Int) -> URL? {
+        guard let url = getIssueOrPullAtIndex(index)?.htmlUrl else { return nil }
+        return URL(string: url)
     }
 }
