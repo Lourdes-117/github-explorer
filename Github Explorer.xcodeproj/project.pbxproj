@@ -18,7 +18,7 @@
 		AE850CB726941D4000A4CC04 /* SearchRepoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE850CB626941D4000A4CC04 /* SearchRepoViewController.swift */; };
 		AE850CBA26941F4400A4CC04 /* UIViewControllerUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE850CB926941F4400A4CC04 /* UIViewControllerUtility.swift */; };
 		AE850CBD269422DB00A4CC04 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE850CBC269422DB00A4CC04 /* NetworkManager.swift */; };
-		AE850CC02694240300A4CC04 /* SearchDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE850CBF2694240300A4CC04 /* SearchDataModel.swift */; };
+		AE850CC02694240300A4CC04 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE850CBF2694240300A4CC04 /* Model.swift */; };
 		AE850CC22694299400A4CC04 /* StringConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE850CC12694299400A4CC04 /* StringConstants.swift */; };
 		AE850CC426942EF600A4CC04 /* StringUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE850CC326942EF600A4CC04 /* StringUtility.swift */; };
 		AE850CC6269435E700A4CC04 /* SearchRepoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE850CC5269435E700A4CC04 /* SearchRepoViewModel.swift */; };
@@ -32,6 +32,12 @@
 		AE850CFE269471F200A4CC04 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE850CFD269471F200A4CC04 /* HomeViewModel.swift */; };
 		AE850D012694865200A4CC04 /* RepositoryCoreData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE850CFF2694865200A4CC04 /* RepositoryCoreData+CoreDataClass.swift */; };
 		AE850D022694865200A4CC04 /* RepositoryCoreData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE850D002694865200A4CC04 /* RepositoryCoreData+CoreDataProperties.swift */; };
+		AE850D052694968700A4CC04 /* ShowIssuesOrPullRequestsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE850D042694968700A4CC04 /* ShowIssuesOrPullRequestsViewController.swift */; };
+		AE850D072694969C00A4CC04 /* ShowIssuesOrPullRequestsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE850D062694969C00A4CC04 /* ShowIssuesOrPullRequestsViewController.storyboard */; };
+		AE850D09269497E500A4CC04 /* ShowIssuesOrPullRequestsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE850D08269497E500A4CC04 /* ShowIssuesOrPullRequestsViewModel.swift */; };
+		AE850D0F2694A36200A4CC04 /* IssuesOrPullRequestsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE850D0D2694A36200A4CC04 /* IssuesOrPullRequestsTableViewCell.swift */; };
+		AE850D102694A36200A4CC04 /* IssuesOrPullRequestsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE850D0E2694A36200A4CC04 /* IssuesOrPullRequestsTableViewCell.xib */; };
+		AE850D122694A78900A4CC04 /* IssuesOrPullRequestsTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE850D112694A78900A4CC04 /* IssuesOrPullRequestsTableViewCellViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,7 +54,7 @@
 		AE850CB626941D4000A4CC04 /* SearchRepoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRepoViewController.swift; sourceTree = "<group>"; };
 		AE850CB926941F4400A4CC04 /* UIViewControllerUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerUtility.swift; sourceTree = "<group>"; };
 		AE850CBC269422DB00A4CC04 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
-		AE850CBF2694240300A4CC04 /* SearchDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDataModel.swift; sourceTree = "<group>"; };
+		AE850CBF2694240300A4CC04 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		AE850CC12694299400A4CC04 /* StringConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringConstants.swift; sourceTree = "<group>"; };
 		AE850CC326942EF600A4CC04 /* StringUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringUtility.swift; sourceTree = "<group>"; };
 		AE850CC5269435E700A4CC04 /* SearchRepoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRepoViewModel.swift; sourceTree = "<group>"; };
@@ -62,6 +68,12 @@
 		AE850CFD269471F200A4CC04 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		AE850CFF2694865200A4CC04 /* RepositoryCoreData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RepositoryCoreData+CoreDataClass.swift"; sourceTree = "<group>"; };
 		AE850D002694865200A4CC04 /* RepositoryCoreData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RepositoryCoreData+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		AE850D042694968700A4CC04 /* ShowIssuesOrPullRequestsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowIssuesOrPullRequestsViewController.swift; sourceTree = "<group>"; };
+		AE850D062694969C00A4CC04 /* ShowIssuesOrPullRequestsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ShowIssuesOrPullRequestsViewController.storyboard; sourceTree = "<group>"; };
+		AE850D08269497E500A4CC04 /* ShowIssuesOrPullRequestsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowIssuesOrPullRequestsViewModel.swift; sourceTree = "<group>"; };
+		AE850D0D2694A36200A4CC04 /* IssuesOrPullRequestsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssuesOrPullRequestsTableViewCell.swift; sourceTree = "<group>"; };
+		AE850D0E2694A36200A4CC04 /* IssuesOrPullRequestsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IssuesOrPullRequestsTableViewCell.xib; sourceTree = "<group>"; };
+		AE850D112694A78900A4CC04 /* IssuesOrPullRequestsTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssuesOrPullRequestsTableViewCellViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +155,7 @@
 				AE850CB02694159100A4CC04 /* HomeViewController */,
 				AE850CB326941D1400A4CC04 /* SearchRepoViewController */,
 				AE850CD126944A8000A4CC04 /* RepoDescriptionViewController */,
+				AE850D032694965E00A4CC04 /* ShowIssuesOrPrViewController */,
 			);
 			path = Templates;
 			sourceTree = "<group>";
@@ -179,7 +192,7 @@
 		AE850CBE269423E400A4CC04 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				AE850CBF2694240300A4CC04 /* SearchDataModel.swift */,
+				AE850CBF2694240300A4CC04 /* Model.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -187,6 +200,7 @@
 		AE850CC72694382100A4CC04 /* Organism */ = {
 			isa = PBXGroup;
 			children = (
+				AE850D0A2694A2F300A4CC04 /* IssuesPullRequestsTableViewCell */,
 				AE850CC82694382D00A4CC04 /* RepoTableViewCell */,
 			);
 			path = Organism;
@@ -218,6 +232,26 @@
 				AE850D002694865200A4CC04 /* RepositoryCoreData+CoreDataProperties.swift */,
 			);
 			path = CoreData;
+			sourceTree = "<group>";
+		};
+		AE850D032694965E00A4CC04 /* ShowIssuesOrPrViewController */ = {
+			isa = PBXGroup;
+			children = (
+				AE850D062694969C00A4CC04 /* ShowIssuesOrPullRequestsViewController.storyboard */,
+				AE850D08269497E500A4CC04 /* ShowIssuesOrPullRequestsViewModel.swift */,
+				AE850D042694968700A4CC04 /* ShowIssuesOrPullRequestsViewController.swift */,
+			);
+			path = ShowIssuesOrPrViewController;
+			sourceTree = "<group>";
+		};
+		AE850D0A2694A2F300A4CC04 /* IssuesPullRequestsTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				AE850D0E2694A36200A4CC04 /* IssuesOrPullRequestsTableViewCell.xib */,
+				AE850D112694A78900A4CC04 /* IssuesOrPullRequestsTableViewCellViewModel.swift */,
+				AE850D0D2694A36200A4CC04 /* IssuesOrPullRequestsTableViewCell.swift */,
+			);
+			path = IssuesPullRequestsTableViewCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -277,10 +311,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE850D072694969C00A4CC04 /* ShowIssuesOrPullRequestsViewController.storyboard in Resources */,
 				AE850CA82694155F00A4CC04 /* LaunchScreen.storyboard in Resources */,
 				AE850CB526941D3200A4CC04 /* SearchRepoViewController.storyboard in Resources */,
 				AE850CA52694155F00A4CC04 /* Assets.xcassets in Resources */,
 				AE850CA02694155C00A4CC04 /* HomeViewController.storyboard in Resources */,
+				AE850D102694A36200A4CC04 /* IssuesOrPullRequestsTableViewCell.xib in Resources */,
 				AE850CCA2694385400A4CC04 /* RepoTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -294,18 +330,22 @@
 			files = (
 				AE850CD326944AA600A4CC04 /* RepoDescriptionViewController.swift in Sources */,
 				AE850C9D2694155C00A4CC04 /* HomeViewController.swift in Sources */,
-				AE850CC02694240300A4CC04 /* SearchDataModel.swift in Sources */,
+				AE850CC02694240300A4CC04 /* Model.swift in Sources */,
+				AE850D0F2694A36200A4CC04 /* IssuesOrPullRequestsTableViewCell.swift in Sources */,
 				AE850CFE269471F200A4CC04 /* HomeViewModel.swift in Sources */,
 				AE850CC22694299400A4CC04 /* StringConstants.swift in Sources */,
 				AE850CCE2694402B00A4CC04 /* UIViewUtility.swift in Sources */,
 				AE850CC426942EF600A4CC04 /* StringUtility.swift in Sources */,
+				AE850D122694A78900A4CC04 /* IssuesOrPullRequestsTableViewCellViewModel.swift in Sources */,
 				AE850CB726941D4000A4CC04 /* SearchRepoViewController.swift in Sources */,
 				AE850D022694865200A4CC04 /* RepositoryCoreData+CoreDataProperties.swift in Sources */,
 				AE850C992694155C00A4CC04 /* AppDelegate.swift in Sources */,
 				AE850CBD269422DB00A4CC04 /* NetworkManager.swift in Sources */,
 				AE850CDC2694605D00A4CC04 /* PersistanceService.swift in Sources */,
 				AE850C9B2694155C00A4CC04 /* SceneDelegate.swift in Sources */,
+				AE850D09269497E500A4CC04 /* ShowIssuesOrPullRequestsViewModel.swift in Sources */,
 				AE850D012694865200A4CC04 /* RepositoryCoreData+CoreDataClass.swift in Sources */,
+				AE850D052694968700A4CC04 /* ShowIssuesOrPullRequestsViewController.swift in Sources */,
 				AE850CC6269435E700A4CC04 /* SearchRepoViewModel.swift in Sources */,
 				AE850CA32694155C00A4CC04 /* Github_Explorer.xcdatamodeld in Sources */,
 				AE850CD02694448100A4CC04 /* UIImageViewUtility.swift in Sources */,

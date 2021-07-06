@@ -30,11 +30,11 @@ struct RepositoryModel: Decodable {
     let owner: RepoOwnerModel?
     let repoDescription: String?
     
-    var pulls: String {
+    var pullsUrl: String {
         String(format: StringConstants.shared.urls.pullsBaseUrl, owner?.login ?? "", name ?? "").addPercentEncoding()
     }
     
-    var issues: String {
+    var issuesUrl: String {
         String(format: StringConstants.shared.urls.issuesBaseUrl, owner?.login ?? "", name ?? "").addPercentEncoding()
     }
 }
@@ -48,4 +48,21 @@ struct RepoOwnerModel: Decodable {
     let login: String?
     let avatarUrl: String?
     let id: Int
+}
+
+struct PullsOrIssuesModel: Decodable {
+    private enum CodingKeys: String, CodingKey {
+        case id
+        case number
+        case url
+        case status = "state"
+        case title
+        case user
+    }
+    let id: Int?
+    let number: Int?
+    let url: String?
+    let status: String?
+    let title: String?
+    let user: RepoOwnerModel?
 }

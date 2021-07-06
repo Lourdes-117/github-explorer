@@ -37,6 +37,9 @@ enum RepoDescriptionViewType {
 }
 
 class RepoDescriptionViewModel {
+    let showPullsText = "Show Pull Requests"
+    let showaIssuesText = "Show Issues"
+    let buttonColor: UIColor = .link
     var repoViewType: RepoDescriptionViewType = .addRepo
     var selectedRepo: RepositoryModel?
     var managedObject: NSManagedObject?
