@@ -8,6 +8,7 @@
 import UIKit
 
 class SearchRepoViewModel {
+    let pageTitle = "Search Repository"
     var searchResults: SearchDataModel?
     let searchCellHeight: CGFloat = 70
     

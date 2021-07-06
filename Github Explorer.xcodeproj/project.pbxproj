@@ -26,6 +26,8 @@
 		AE850CCC2694386300A4CC04 /* RepoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE850CCB2694386300A4CC04 /* RepoTableViewCell.swift */; };
 		AE850CCE2694402B00A4CC04 /* UIViewUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE850CCD2694402B00A4CC04 /* UIViewUtility.swift */; };
 		AE850CD02694448100A4CC04 /* UIImageViewUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE850CCF2694448100A4CC04 /* UIImageViewUtility.swift */; };
+		AE850CD326944AA600A4CC04 /* RepoDescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE850CD226944AA600A4CC04 /* RepoDescriptionViewController.swift */; };
+		AE850CD52694515900A4CC04 /* RepoDescriptionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE850CD42694515900A4CC04 /* RepoDescriptionViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +52,8 @@
 		AE850CCB2694386300A4CC04 /* RepoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoTableViewCell.swift; sourceTree = "<group>"; };
 		AE850CCD2694402B00A4CC04 /* UIViewUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewUtility.swift; sourceTree = "<group>"; };
 		AE850CCF2694448100A4CC04 /* UIImageViewUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewUtility.swift; sourceTree = "<group>"; };
+		AE850CD226944AA600A4CC04 /* RepoDescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoDescriptionViewController.swift; sourceTree = "<group>"; };
+		AE850CD42694515900A4CC04 /* RepoDescriptionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoDescriptionViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +130,7 @@
 		AE850CB226941CB600A4CC04 /* Templates */ = {
 			isa = PBXGroup;
 			children = (
+				AE850CD126944A8000A4CC04 /* RepoDescriptionViewController */,
 				AE850CB02694159100A4CC04 /* HomeViewController */,
 				AE850CB326941D1400A4CC04 /* SearchRepoViewController */,
 			);
@@ -184,6 +189,15 @@
 				AE850CCB2694386300A4CC04 /* RepoTableViewCell.swift */,
 			);
 			path = RepoTableViewCell;
+			sourceTree = "<group>";
+		};
+		AE850CD126944A8000A4CC04 /* RepoDescriptionViewController */ = {
+			isa = PBXGroup;
+			children = (
+				AE850CD226944AA600A4CC04 /* RepoDescriptionViewController.swift */,
+				AE850CD42694515900A4CC04 /* RepoDescriptionViewModel.swift */,
+			);
+			path = RepoDescriptionViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,6 +272,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE850CD326944AA600A4CC04 /* RepoDescriptionViewController.swift in Sources */,
 				AE850C9D2694155C00A4CC04 /* HomeViewController.swift in Sources */,
 				AE850CC02694240300A4CC04 /* SearchDataModel.swift in Sources */,
 				AE850CC22694299400A4CC04 /* StringConstants.swift in Sources */,
@@ -272,6 +287,7 @@
 				AE850CD02694448100A4CC04 /* UIImageViewUtility.swift in Sources */,
 				AE850CBA26941F4400A4CC04 /* UIViewControllerUtility.swift in Sources */,
 				AE850CCC2694386300A4CC04 /* RepoTableViewCell.swift in Sources */,
+				AE850CD52694515900A4CC04 /* RepoDescriptionViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

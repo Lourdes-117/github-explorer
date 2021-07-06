@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Uce-Hn-S5Y">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -9,6 +9,22 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="SAJ-qZ-FJk">
+            <objects>
+                <navigationController id="Uce-Hn-S5Y" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="hfg-SY-PwQ">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="3Wh-zT-804"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Qm-Li-kP7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-835" y="119"/>
+        </scene>
         <!--Search Repo View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
@@ -18,15 +34,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xaI-go-gQ3">
-                                <rect key="frame" x="0.0" y="129" width="414" height="733"/>
+                                <rect key="frame" x="0.0" y="139" width="414" height="723"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
-                            <searchBar contentMode="redraw" searchBarStyle="minimal" prompt="Search" placeholder="Search For a Repository" translatesAutoresizingMaskIntoConstraints="NO" id="hli-he-Mh5">
-                                <rect key="frame" x="0.0" y="44" width="414" height="85"/>
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search For a Repository" translatesAutoresizingMaskIntoConstraints="NO" id="hli-he-Mh5">
+                                <rect key="frame" x="0.0" y="88" width="414" height="51"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="search" textContentType="name"/>
                             </searchBar>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="5uu-wq-FIr">
-                                <rect key="frame" x="188.5" y="477" width="37" height="37"/>
+                                <rect key="frame" x="188.5" y="482" width="37" height="37"/>
                             </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
@@ -43,6 +59,7 @@
                             <constraint firstItem="xaI-go-gQ3" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="wx1-O8-kL0"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="IVg-0j-KJ2"/>
                     <connections>
                         <outlet property="activityIndicator" destination="5uu-wq-FIr" id="1Cf-6Z-HGn"/>
                         <outlet property="searchBar" destination="hli-he-Mh5" id="cD7-Qm-pfq"/>

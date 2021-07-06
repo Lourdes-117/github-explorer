@@ -23,6 +23,7 @@ class SearchRepoViewController: UIViewController {
     
     private func initialSetup() {
         registerCells()
+        self.title = viewModel.pageTitle
         activityIndicator.isHidden = true
         tableView.dataSource = self
         tableView.delegate = self
@@ -53,6 +54,12 @@ extension SearchRepoViewController: UITableViewDataSource {
 extension SearchRepoViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         viewModel.searchCellHeight
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let viewController = RepoDescriptionViewController()
+        viewController.selectedRepo = viewModel.getRepoAtIndex(indexPath.row)
+        self.navigationController?.pushViewController(viewController, animated: true)
     }
 }
 

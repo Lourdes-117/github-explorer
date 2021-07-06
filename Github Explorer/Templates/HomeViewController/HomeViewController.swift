@@ -26,7 +26,7 @@ class HomeViewController: UIViewController {
 
 // MARK: Button Actions
     @IBAction func onTapAddNewRepo(_ sender: Any) {
-        guard let searchRepoViewController = SearchRepoViewController.initiateVC() else { return }
+        guard let searchRepoViewController = SearchRepoViewController.initiateNC() else { return }
         self.present(searchRepoViewController, animated: true, completion: nil)
     }
 }
